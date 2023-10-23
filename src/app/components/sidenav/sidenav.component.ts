@@ -7,11 +7,22 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({
   selector: 'app-sidenav',
   standalone: true,
-  imports: [RouterModule, CommonModule, MatSidenavModule, MatListModule, MatIconModule, MatCardModule, NavbarComponent, MatButtonModule],
+  imports: [
+    RouterModule,
+    CommonModule,
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule,
+    MatCardModule,
+    NavbarComponent,
+    MatButtonModule,
+    MatInputModule, MatFormFieldModule],
   template: `
 <mat-sidenav-container>
   <mat-sidenav #sidenav mode="side" [opened]="sidenavOpen">
@@ -29,9 +40,8 @@ import { MatButtonModule } from '@angular/material/button';
 </mat-card>
   <mat-nav-list>
      <h5>MAIN</h5>
-     <!-- Divider -->
-     <mat-divider></mat-divider>
-      <a mat-list-item routerLink="/tasks">
+     <mat-divider></mat-divider>  <!-- Divider -->
+      <a mat-list-item routerLink="/tasks" routerLinkActive="active">
       <div class="flex-center">
         <mat-icon>edit_calendar</mat-icon>
         <span> Tasks</span>
@@ -50,8 +60,7 @@ import { MatButtonModule } from '@angular/material/button';
       </div>
       </a>
       <h5>OTHERS</h5>
-      <!-- Divider -->
-      <mat-divider></mat-divider>
+      <mat-divider></mat-divider> <!-- Divider -->
       <a mat-list-item routerLink="/profile">
       <div class="flex-center">
         <mat-icon>settings</mat-icon>
@@ -65,7 +74,7 @@ import { MatButtonModule } from '@angular/material/button';
       </div>
       </a>
     </mat-nav-list>
-    <!-- Logout button -->
+  <!-- Logout button -->
   <button mat-stroked-button color="warn" class="logout-button">
   <mat-icon class="logout-icon">logout</mat-icon>
         <span> Logout</span>
@@ -74,6 +83,23 @@ import { MatButtonModule } from '@angular/material/button';
   <mat-sidenav-content>
     <app-navbar (toggleSidenavClick)="handleSidenavToggle($event)"></app-navbar>
     <div class="main-container">
+    <!-- Action card -->
+    <mat-card class="action-card">
+  <mat-card-header class="data-header">
+    <mat-card-title>May</mat-card-title>
+    <mat-card-subtitle>Today is Saturday, Jul 9th, 2023</mat-card-subtitle>
+  </mat-card-header>
+  <mat-divider class="action-divider" [vertical]="true"></mat-divider> <!-- Divider -->
+  <mat-card-header class="total-header">
+    <mat-card-title>0</mat-card-title>
+    <mat-card-subtitle>You have created 0 tasks </mat-card-subtitle>
+  </mat-card-header>
+ <mat-divider class="action-divider" [vertical]="true"></mat-divider> <!-- Divider -->
+  <mat-card-actions>
+   <button mat-stroked-button color="accent" class="filter-button"> <mat-icon>filter_list</mat-icon> Filters</button>
+   <button mat-raised-button color="accent"> <mat-icon>add</mat-icon> Create new</button>
+</mat-card-actions>
+</mat-card>
     <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>

@@ -1,21 +1,10 @@
-mat-sidenav-container{
-  height: 100%;
-}
-mat-sidenav-content {
+mat-sidenav-container, mat-sidenav-content{
   height: 100%;
 }
 mat-sidenav {
   width: 250px;
   position: fixed;
   padding: 19px 24px;
-}
-mat-card {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 6px 14px;
-  border: 1px solid rgba(255,255,255,.12);
-
 }
 h5{
   margin-top: 36px;
@@ -28,14 +17,6 @@ mat-icon {
   margin-right: 10px;
 }
 
-.logout-button {
-  position: absolute;
-  bottom: 19px;
-  width: 81%;
-}
-.logout-icon {
-  transform: rotate(180deg);
-}
 .flex-center {
   display: flex;
   align-items: center;
@@ -46,7 +27,6 @@ mat-icon {
 }
 .mat-mdc-card-header {
   padding: 0;
-  margin-left: 14px;
 }
 .violet{
   font-size: 22px;
@@ -71,8 +51,43 @@ mat-icon {
   border-top: 0.5px solid ;
   margin: 10px 0 10px 0;
 }
-.user-box {
-  border: 0.5px solid;
-  padding: 20px;
-  border-radius: 10px;
+.action-divider {
+  margin: 0;
+  height: 56px;
+}
+
+/* Cards */
+mat-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 6px 14px;
+  border: 1px solid rgba(255,255,255,.12);
+}
+mat-card .data-header {
+  margin-right: auto;
+}
+mat-card mat-card-actions {
+  margin-left: auto;
+  padding: 0;
+}
+mat-card .total-header {
+  margin: auto;
+}
+.action-card {
+  margin-bottom: 16px;
+}
+
+/* Buttons */
+.logout-button {
+  position: absolute;
+  bottom: 19px;
+  width: 81%;
+}
+.logout-icon {
+  transform: rotate(180deg);
+}
+.filter-button {
+ margin-right: 16px;
 }

@@ -5,6 +5,11 @@ import { ProfileComponent } from "./pages/profile/profile.component";
 
 const ROUTES: Routes = [
   {
+    path: '',
+    redirectTo: 'tasks',
+    pathMatch: 'full',
+  },
+  {
     path: 'tasks',
     component: TaskComponent,
     title: 'Tasks Page'
