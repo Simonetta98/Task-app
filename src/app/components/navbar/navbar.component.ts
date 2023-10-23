@@ -15,7 +15,7 @@ import { MatSidenav } from '@angular/material/sidenav';
   <button mat-icon-button (click)="toggleSidenav()">
     <mat-icon>menu</mat-icon>
   </button>
-  <span>My App</span>
+  <h1>My Tasks</h1>
 </mat-toolbar>
   `,
   styleUrls: ['./navbar.component.css']

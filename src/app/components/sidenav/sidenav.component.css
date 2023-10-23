@@ -4,11 +4,75 @@ mat-sidenav-container{
 mat-sidenav-content {
   height: 100%;
 }
-.main-container {
-  margin: 20px 0 0 20px;
-}
 mat-sidenav {
   width: 250px;
   position: fixed;
+  padding: 19px 24px;
+}
+mat-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 6px 14px;
+  border: 1px solid rgba(255,255,255,.12);
+
+}
+h5{
+  margin-top: 36px;
+  margin-bottom: 0;
+}
+mat-divider {
+  margin-bottom: 12px;
+}
+mat-icon {
+  margin-right: 10px;
 }
 
+.logout-button {
+  position: absolute;
+  bottom: 19px;
+  width: 81%;
+}
+.logout-icon {
+  transform: rotate(180deg);
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+}
+.mdc-list-item {
+  padding: 10px;
+  border-radius: 4px;
+}
+.mat-mdc-card-header {
+  padding: 0;
+  margin-left: 14px;
+}
+.violet{
+  font-size: 22px;
+  color: #c2185b;
+}
+.white {
+  color: #fff;
+}
+.title-box {
+  height: 64px; /* same as navbar */
+}
+.rounded {
+  width: 48px;
+  height: 48px;
+  border-radius: 30px;
+  margin-top: 0.5px;
+}
+.main-container {
+  margin: 20px;
+}
+.mat-nav-divider {
+  border-top: 0.5px solid ;
+  margin: 10px 0 10px 0;
+}
+.user-box {
+  border: 0.5px solid;
+  padding: 20px;
+  border-radius: 10px;
+}
