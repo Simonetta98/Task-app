@@ -1,10 +1,135 @@
 mat-card {
   border: 1px solid rgba(255,255,255,.12);
+  margin-bottom: 20px;
+  height: 100%;
 }
 mat-grid-tile {
   border-right: 1px solid rgba(255,255,255,.12);
 }
 mat-grid-tile:last-child {
   border-right: none;
+}
+mat-card-actions {
+  justify-content: flex-end;
+}
+mat-list {
+  min-height: 90%;
+}
+h3 {
+  margin: 0;
+}
+
+.divider {
+  margin: 16px 0;
+  width: 160px;
+}
+.scroll {
+  overflow: scroll;
+}
+.flex-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.counter {
+  position: relative;
+  z-index: 20;
+}
+.counter-bg {
+  position: absolute;
+  top: -4.5px;
+  right: -9.8px;
+  z-index: -20;
+  background-color: #303030;
+  width: 28px;
+  height: 28px;
+  border-radius: 30px;
+}
+.small-button {
+  width: 36px;
+  height: 36px;
+  min-width: 38px !important;
+  padding: 0px !important;
+  margin-right: 6px;
+}
+.small-button mat-icon{
+  margin: 0;
+}
+.absolute {
+  position: absolute;
+  width: calc(100% - 40px);
+  height: calc(100% - 194px);
+  bottom: 0;
+}
+.content-list {
+  height: 100%;
+  padding-bottom: 0!important;
+  overflow: hidden;
+}
+.content-tile {
+  height: 60%;
+  padding-top: calc(20% - 0.75px)!important;
+}
+::ng-deep .content-tile .mat-grid-tile-content {
+  display: block!important;
+  margin: 0 20px;
+}
+.card-chips {
+  width: 100%;
+  display: flex;
+  margin-top: 10px;
+}
+.ml-auto {
+  margin-left: auto;
+}
+.mr-auto {
+  margin-right: auto;
+}
+.card-divider {
+  margin: 16px 0;
+  width: 100%;
+}
+.circle-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.team-circle {
+  width: 30px;
+  height: 30px;
+  background-color: #424242;
+  color: white;
+  border-radius: 50%;
+  border: 2px solid #595959;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: -10px;
+}
+
+// drag&drop
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+              0 8px 10px 1px rgba(0, 0, 0, 0.14),
+              0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+.task-list.cdk-drop-list-dragging .task-card:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
 

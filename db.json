@@ -1,0 +1,116 @@
+{
+  "team": [
+    {
+      "id": 0,
+      "name": "Alberto",
+      "surname": "Fonzi",
+      "birthdate": "14/03/1990",
+      "role": "Front-End Developer"
+    },
+    {
+      "id": 1,
+      "name": "Cristina",
+      "surname": "Neri",
+      "birthdate": "12/09/1992",
+      "role": "Back-End Developer"
+    },
+    {
+      "id": 2,
+      "name": "John",
+      "surname": "Doe",
+      "birthdate": "02/12/1991",
+      "role": "Back-End Developer"
+    },
+    {
+      "id": 3,
+      "name": "Mario",
+      "surname": "Rossi",
+      "birthdate": "02/11/1990",
+      "role": "Front-End Developer"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 0,
+      "status": "inProgress",
+      "order": 0,
+      "title": "Mobile App",
+      "content": "First set-up and meeting",
+      "priority": "Low",
+      "startDate": "14/10/2023",
+      "team": [
+        {
+          "id": 2,
+          "name": "John",
+          "surname": "Doe",
+          "birthdate": "02/12/1991",
+          "role": "Back-End Developer"
+        },
+        {
+          "id": 3,
+          "name": "Mario",
+          "surname": "Rossi",
+          "birthdate": "02/11/1990",
+          "role": "Front-End Developer"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "status": "todo",
+      "order": 0,
+      "title": "Web Moodboard",
+      "content": "First set-up and meeting",
+      "priority": "Medium",
+      "startDate": "02/08/2023",
+      "team": [
+        {
+          "id": 0,
+          "name": "Alberto",
+          "surname": "Fonzi",
+          "birthdate": "14/03/1990",
+          "role": "Front-End Developer"
+        },
+        {
+          "id": 1,
+          "name": "Cristina",
+          "surname": "Neri",
+          "birthdate": "12/09/1992",
+          "role": "Back-End Developer"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "status": "inProgress",
+      "order": 1,
+      "title": "Mobile App",
+      "content": "First set-up and meeting",
+      "priority": "low",
+      "startDate": "14/10/2023",
+      "team": [
+        {
+          "id": 0,
+          "name": "Alberto",
+          "surname": "Fonzi",
+          "birthdate": "14/03/1990",
+          "role": "Front-End Developer"
+        },
+        {
+          "id": 2,
+          "name": "John",
+          "surname": "Doe",
+          "birthdate": "02/12/1991",
+          "role": "Back-End Developer"
+        },
+        {
+          "id": 3,
+          "name": "Mario",
+          "surname": "Rossi",
+          "birthdate": "02/11/1990",
+          "role": "Front-End Developer"
+        }
+      ]
+    }
+  ]
+}

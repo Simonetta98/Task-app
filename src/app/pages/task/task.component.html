@@ -1,20 +1,236 @@
-<mat-card>
-<mat-grid-list cols="4" >
-  <!-- 1st Block -->
-  <mat-grid-tile>
-    To Do
+<mat-card class="absolute">
+  <!-- Grid titles -->
+  <mat-grid-list cols="4" rowHeight="2:1">
+    <mat-grid-tile>
+      <div class="flex-col">
+      <div class="flex-row">
+        <h3> To Do </h3>
+        <div class="counter">
+          {{todo.length}}
+          <div class="counter-bg"></div>
+        </div>
+      </div>
+        <mat-divider class="divider"></mat-divider>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+    <div class="flex-col">
+      <div class="flex-row">
+        <h3> In Progress </h3>
+        <div class="counter">
+          {{inProgress.length}}
+          <div class="counter-bg"></div>
+        </div>
+      </div>
+        <mat-divider class="divider"></mat-divider>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+    <div class="flex-col">
+      <div class="flex-row">
+        <h3> In Review </h3>
+        <div class="counter">
+          {{inReview.length}}
+          <div class="counter-bg"></div>
+        </div>
+      </div>
+        <mat-divider class="divider"></mat-divider>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+    <div class="flex-col">
+      <div class="flex-row">
+        <h3> Done </h3>
+        <div class="counter">
+          {{done.length}}
+          <div class="counter-bg"></div>
+        </div>
+      </div>
+        <mat-divider class="divider"></mat-divider>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <mat-grid-list cols="4" class="content-list" cdkDropListGroup>
+  <!-- To Do -->
+  <mat-grid-tile class="scroll content-tile">
+  <mat-list role="list"
+  class="task-list"
+  cdkDropList
+  #todoList="cdkDropList"
+  [cdkDropListData]="todo"
+  (cdkDropListDropped)="drop($event)"
+  >
+    <mat-card class="task-card" role="listitem" *ngFor="let item of todo" cdkDrag [cdkDragData]="item">
+        <mat-card-header>
+          <mat-card-title>
+            {{item.title}}
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+        <mat-divider class="card-divider"></mat-divider>
+        <p class="mr-auto">{{item.content}}</p>
+        <div class="circle-container">
+      <div
+        *ngFor="let teamMember of item.team "
+        class="team-circle"
+      >{{ teamMember.name.charAt(0) }}</div>
+    </div>
+        <div class="card-chips">
+        <mat-chip>
+      {{item.priority}}
+        </mat-chip>
+        <mat-chip class="ml-auto">
+      {{item.startDate}}
+        </mat-chip>
+        </div>
+          <mat-divider class="card-divider"></mat-divider>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-stroked-button matTooltip="edit" color="primary" class="small-button">
+          <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-stroked-button matTooltip="delete" color="accent" class="delete-btn small-button">
+          <mat-icon>delete</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+
+  </mat-list>
   </mat-grid-tile>
-  <!-- 2nd Block -->
-  <mat-grid-tile>
-    In Progress
+  <!-- In Progress -->
+  <mat-grid-tile class="scroll content-tile">
+  <mat-list role="list"
+  cdkDropList
+  #inProgressList="cdkDropList"
+  [cdkDropListData]="inProgress"
+  (cdkDropListDropped)="drop($event)"
+  >
+  <mat-card class="task-card" *ngFor="let item of inProgress" role="listitem" cdkDrag [cdkDragData]="item">
+        <mat-card-header>
+          <mat-card-title>
+            {{item.title}}
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+        <mat-divider class="card-divider"></mat-divider>
+        <p class="mr-auto">{{item.content}}</p>
+        <div class="circle-container">
+      <div
+        *ngFor="let teamMember of item.team"
+        class="team-circle"
+      >{{ teamMember.name.charAt(0) }}</div>
+    </div>
+        <div class="card-chips">
+        <mat-chip>
+      {{item.priority}}
+        </mat-chip>
+        <mat-chip class="ml-auto">
+      {{item.startDate}}
+        </mat-chip>
+        </div>
+          <mat-divider class="card-divider"></mat-divider>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-stroked-button matTooltip="edit" color="primary" class="small-button">
+          <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-stroked-button matTooltip="delete" color="accent" class="delete-btn small-button">
+          <mat-icon>delete</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+
+  </mat-list>
   </mat-grid-tile>
-  <!-- 3rd Block -->
-  <mat-grid-tile>
-    In Review
+  <!-- In Review -->
+  <mat-grid-tile class="scroll content-tile">
+  <mat-list role="list"
+  cdkDropList
+  #inReviewList="cdkDropList"
+  [cdkDropListData]="inReview"
+  (cdkDropListDropped)="drop($event)"
+  >
+  <mat-card class="task-card" *ngFor="let item of inReview" role="listitem" cdkDrag [cdkDragData]="item">
+    <mat-card-header>
+      <mat-card-title>
+        {{item.title}}
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+    <mat-divider class="card-divider"></mat-divider>
+    <p class="mr-auto">{{item.content}}</p>
+    <div class="circle-container">
+  <div
+    *ngFor="let teamMember of item.team"
+    class="team-circle"
+  >{{ teamMember.name.charAt(0) }}</div>
+</div>
+    <div class="card-chips">
+    <mat-chip>
+  {{item.priority}}
+    </mat-chip>
+    <mat-chip class="ml-auto">
+  {{item.startDate}}
+    </mat-chip>
+    </div>
+      <mat-divider class="card-divider"></mat-divider>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-stroked-button matTooltip="edit" color="primary" class="small-button">
+      <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-stroked-button matTooltip="delete" color="accent" class="delete-btn small-button">
+      <mat-icon>delete</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+  </mat-list>
   </mat-grid-tile>
-  <!-- 4th Block -->
-  <mat-grid-tile>
-    Done
+  <!-- Done -->
+  <mat-grid-tile class="scroll content-tile">
+  <mat-list role="list"
+  cdkDropList
+  #doneList="cdkDropList"
+  [cdkDropListData]="done"
+  (cdkDropListDropped)="drop($event)"
+  >
+  <mat-card class="task-card" *ngFor="let item of done" role="listitem" cdkDrag [cdkDragData]="item">
+    <mat-card-header>
+      <mat-card-title>
+        {{item.title}}
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+    <mat-divider class="card-divider"></mat-divider>
+    <p class="mr-auto">{{item.content}}</p>
+    <div class="circle-container">
+  <div
+    *ngFor="let teamMember of item.team"
+    class="team-circle"
+  >{{ teamMember.name.charAt(0) }}</div>
+</div>
+    <div class="card-chips">
+    <mat-chip>
+  {{item.priority}}
+    </mat-chip>
+    <mat-chip class="ml-auto">
+  {{item.startDate}}
+    </mat-chip>
+    </div>
+      <mat-divider class="card-divider"></mat-divider>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-stroked-button matTooltip="edit" color="primary" class="small-button">
+      <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-stroked-button matTooltip="delete" color="accent" class="delete-btn small-button">
+      <mat-icon>delete</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+  </mat-list>
   </mat-grid-tile>
-</mat-grid-list>
-</mat-card>
+
+  </mat-grid-list>
+  </mat-card>
